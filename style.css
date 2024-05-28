@@ -1,3 +1,103 @@
 /* Import Montserrat and Fraunces from Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --darkCyan: hsl(158, 36%, 37%);
+  --darkerCyan: hsl(158, 36%, 20%);
+  --cream: hsl(30, 38%, 92%);
+  --veryDarkBlue: hsl(212, 21%, 14%);
+  --darkGrayishBlue: hsl(228, 12%, 48%);
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  font-family: Montserrat, sans-serif;
+  color: var(--darkGrayishBlue);
+  background-color: var(--cream);
+  font-size: 0.85rem;
+  display: grid;
+  place-content: center;
+  padding: 1rem;
+}
+
+h1,
+.product__price {
+  font-family: Fraunces, serif;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+h1 {
+  color: var(--veryDarkBlue);
+}
+
+.product {
+  display: grid;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: var(--white);
+  max-width: 600px;
+}
+
+.product__category {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 0.85rem;
+}
+
+.product__text {
+  display: grid;
+  gap: 1rem;
+  background-color: var(--white);
+  font-weight: 500;
+  padding: 1.5rem;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.product__price {
+  color: var(--darkCyan);
+}
+
+.product__old-price {
+  text-decoration: line-through;
+}
+
+.product__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1em 2em;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  background-color: var(--darkCyan);
+  color: var(--white);
+  transition: background-color 250ms ease-in-out;
+  appearance: none;
+}
+
+.product__btn:hover,
+.product__btn:focus,
+.product__btn:active {
+  background-color: var(--darkerCyan);
+}
+
+.product__btn__cart {
+  width: 0.85rem;
+}
+
+@media screen and (min-width: 600px) {
+  .product {
+    grid-template-columns: 1fr 1fr;
+  }
+}
